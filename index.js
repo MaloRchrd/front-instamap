@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		});
 
+		loader.style.display='none';
+
 
 
 
