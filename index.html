@@ -94,6 +94,15 @@
 		width: 160px;
 
 	}
+	.instapic{
+		height:300px;
+		border-radius:5px;
+		border:1px solid #356797;
+	}
+
+	.button-group{
+		top: 0px;
+	}
 
 
 	.leaflet-container .leaflet-marker-pane img{
@@ -109,6 +118,18 @@
 	}
 	.leaflet-popup-close-button{
 		display: none;
+	}
+	@media (min-width: 320px) and (max-width: 480px) {
+		.instapic{
+			height:100px;
+			border-radius:5px;
+			border:1px solid #356797;
+		}
+		.button-group{
+			position: absolute;
+			top: -80px;
+		}
+
 	}
 
 
