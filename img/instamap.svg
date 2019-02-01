@@ -5,10 +5,10 @@
 	 width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
 <g>
 	<g id="background">
-		
+
 			<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-137.8354" y1="262.6133" x2="-137.8354" y2="261.6133" gradientTransform="matrix(-2.351322e-14 -116.928 -128 2.147932e-14 33614.5 -16053.4307)">
-			<stop  offset="0" style="stop-color:#0D3CFB"/>
-			<stop  offset="1" style="stop-color:#2CFEEC"/>
+			<stop  offset="0" style="stop-color:#825ee4"/>
+			<stop  offset="1" style="stop-color:#5e72e4"/>
 		</linearGradient>
 		<path fill="url(#SVGID_1_)" d="M125.568,52.928l-21.824-37.696C102.08,12.374,99.498,9.941,96,7.936
 			c-3.541-2.048-6.934-3.072-10.176-3.072H42.176c-3.243,0-6.634,1.024-10.176,3.072c-3.499,2.005-6.08,4.438-7.744,7.296
@@ -25,7 +25,7 @@
 			c2.475-1.023,4.693-2.367,6.656-4.031l-0.896-0.257c-4.65-1.194-10.091-3.114-16.32-5.76c-3.711-1.536-9.344-4.117-16.896-7.744
 			c-12.331-5.888-21.355-9.706-27.072-11.456c-9.429-2.816-17.301-3.051-23.616-0.703C14.166,90.518,13.418,90.838,12.608,91.264z"
 			/>
-		
+
 			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="53.1719" y1="-54.2051" x2="149.1719" y2="-54.2051" gradientTransform="matrix(1.28 0 0 -1.28 -68.06 7.06)">
 			<stop  offset="0" style="stop-color:#000000;stop-opacity:0.3"/>
 			<stop  offset="1" style="stop-color:#000000;stop-opacity:0.1"/>
@@ -34,7 +34,7 @@
 			c-8.917-2.304-17.601-6.165-26.048-11.584c-8.662-5.546-19.562-8.491-32.704-8.832c-12.928-0.341-24.661,1.899-35.2,6.72
 			c-3.2,1.493-6.272,3.157-9.216,4.992c0.341,2.901,1.109,5.419,2.304,7.553l3.072,5.248c7.979-3.627,16.512-5.078,25.6-4.353
 			c10.112,0.896,19.626,4.458,28.544,10.688c8.619,5.93,17.579,9.834,26.879,11.711C93.994,98.561,102.336,98.858,111.552,97.92z"/>
-		
+
 			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="59.1719" y1="-16.6489" x2="145.1719" y2="-16.6489" gradientTransform="matrix(1.28 0 0 -1.28 -68.06 7.06)">
 			<stop  offset="0" style="stop-color:#000000;stop-opacity:0.3"/>
 			<stop  offset="1" style="stop-color:#000000;stop-opacity:0.1"/>
@@ -58,11 +58,11 @@
 		C127.189,65.869,128,62.413,128,58.36S127.189,50.851,125.568,47.992z"/>
 </mask>
 <g mask="url(#mask)">
-	
+
 		<g transform="             translate(                                 50 50 )                             translate(0 0)  scale(0.5)                               translate(                                 -50 -50 )">
 		<g>
 			<g id="picture" transform="scale(3.3333333333333335)">
-				
+
 					<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-92.7653" y1="140.6391" x2="-92.7653" y2="139.6391" gradientTransform="matrix(44.8 0 0 -64 4179.2959 9002.1006)">
 					<stop  offset="0" style="stop-color:#FFFFFF"/>
 					<stop  offset="1" style="stop-color:#E5EFF9"/>

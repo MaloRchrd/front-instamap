@@ -17,11 +17,50 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
 		$.get("https://api.myjson.com/bins/"+jsonId, function(data, textStatus, jqXHR) {
 			var instaMap = L.map('instaMap').setView([0, 0], 2);
-			var CartoDB_Voyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-				subdomains: 'abcd',
-				maxZoom: 19
-			}).addTo(instaMap);
+			switch (style) {
+				case 'voyager':
+					var CartoDB_Voyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+						attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+						subdomains: 'abcd',
+						maxZoom: 19
+					}).addTo(instaMap);
+
+					break;
+				case 'watercolor':
+				var Stamen_Watercolor = 	L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+					attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+					subdomains: 'abcd',
+					minZoom: 1,
+					maxZoom: 16,
+					ext: 'jpg'
+				}).addTo(instaMap);
+
+					break;
+				case 'classic':
+				var Hydda_Full = L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+					maxZoom: 18,
+					attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+				}).addTo(instaMap);
+
+					break;
+				case 'satelite':
+				var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+					attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+				}).addTo(instaMap);
+
+					break;
+				case 'gray':
+				var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+					attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+					subdomains: 'abcd',
+					maxZoom: 19
+				}).addTo(instaMap);
+
+					break;
+				default:
+
+			}
+
 			oms = new OverlappingMarkerSpiderfier(instaMap,{nearbyDistance:30,circleSpiralSwitchover:2});
 			markerGroup = L.featureGroup().addTo(instaMap);
 			console.log(data);
