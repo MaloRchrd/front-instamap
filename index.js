@@ -32,6 +32,39 @@ document.addEventListener("DOMContentLoaded", function(e) {
 			oms.addListener('spiderfy', function(markers) {
 				instaMap.closePopup();
 			});
+			L.Control.Watermark = L.Control.extend({
+				onAdd: function(map) {
+					var container = L.DomUtil.create('div');
+					var link = L.DomUtil.create('a');
+					var username = L.DomUtil.create('p');
+					var img = L.DomUtil.create('img');
+					var icon = L.DomUtil.create('i');
+					username.innerText = '@'+ data[0].user.username;
+					link.innerHTML = '<i class="fa fa-instagram"></i> Follow @'+ data[0].user.username;
+					link.setAttribute('href','https://www.instagram.com/'+data[0].user.username)
+					link.setAttribute('target','_blank')
+					link.setAttribute('class','followMe')
+					img.src = data[0].user.profile_picture;
+					img.style.width = '30px';
+					img.style.borderRadius = '50%';
+					container.appendChild(link);
+					// link.appendChild(icon);
+					// link.appendChild(username);
+					// username.appendChild(img);
+
+					return container;
+				},
+
+				onRemove: function(map) {
+					// Nothing to do here
+				}
+			});
+
+			L.control.watermark = function(opts) {
+				return new L.Control.Watermark(opts);
+			}
+
+			L.control.watermark({ position: 'topright' }).addTo(instaMap);
 
 
 		});
