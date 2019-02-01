@@ -8,8 +8,8 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-	<script src="urlparams.js" charset="utf-8"></script>
-	<script src="index.js" charset="utf-8"></script>
+	<script src="js/urlparams.js" charset="utf-8"></script>
+
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"/>
    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
@@ -17,6 +17,9 @@
    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
    <style src="dist/MarkerCluster.css" charset="utf-8"></style>
    <script src="dist/leaflet.markercluster.js" charset="utf-8"></script>
+   <script src="js/spiderify.js" charset="utf-8"></script>
+   <script src="index.js" charset="utf-8"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script> -->
 	<title>Instamap</title>
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -34,7 +37,7 @@
 		margin-left: 15px;
 		position: absolute;
     	top: 10px;
-		width: 112px;
+		width: 114px;
 
 
 	}
@@ -48,7 +51,7 @@
 		margin-left: 15px;
 		position: absolute;
     	top: 40px;
-		width: 112px;
+		width: 114px;
 
 
 	}
@@ -102,6 +105,7 @@
 
 	.button-group{
 		top: 0px;
+		position: absolute;
 	}
 
 

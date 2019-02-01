@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
 	// Map variables
 	var instaMap;
 	var markerGroup;
+	var oms;
 
 	var GenerateMap = function(json,style,options) {
 
@@ -21,12 +22,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				subdomains: 'abcd',
 				maxZoom: 19
 			}).addTo(instaMap);
+			oms = new OverlappingMarkerSpiderfier(instaMap,{nearbyDistance:30,circleSpiralSwitchover:2});
 			markerGroup = L.featureGroup().addTo(instaMap);
 			console.log(data);
 			for (var i = 0; i < data.length; i++) {
 				CreateMarker(data[i]);
 			}
 			instaMap.fitBounds(markerGroup.getBounds(),{padding: [50, 50]});
+			oms.addListener('spiderfy', function(markers) {
+				instaMap.closePopup();
+			});
 
 
 		});
@@ -48,30 +53,31 @@ document.addEventListener("DOMContentLoaded", function(e) {
 		    iconUrl: instaMedia.images.low_resolution.url,
 
 		    iconSize:     [instaMedia.images.low_resolution.width/7, instaMedia.images.low_resolution.height/7], // size of the icon
-		    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-		    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+		    iconAnchor:   [instaMedia.images.low_resolution.width/7, instaMedia.images.low_resolution.height/7], // point of the icon which will correspond to marker's location
+			popupAnchor:  [-0, -80]
+		    // popupAnchor:  [(instaMedia.images.low_resolution.width)/4, (instaMedia.images.low_resolution.height)/4] // point from which the popup should open relative to the iconAnchor
 		});
-			var zoomedIcon = L.icon({
-		    iconUrl: instaMedia.images.low_resolution.url,
-
-		    iconSize:     [instaMedia.images.low_resolution.width/2, instaMedia.images.low_resolution.height/2], // size of the icon
-		    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-		    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-		});
-
-
-		var marker = L.marker([instaMedia.location.latitude, instaMedia.location.longitude],{icon: icon}).addTo(markerGroup).bindPopup("<div style='position: relative;top:50px;'><img class='instapic' src='"+instaMedia.images.standard_resolution.url+"' style=''/> <div class='button-group' ><a class='insta-btn' href='"+instaMedia.link+"' target='_blank'><i class='fa fa-instagram' ></i> view on instagram</a> <br><a class='insta-loc' href='https://www.instagram.com/explore/locations/"+instaMedia.location.id+"' target='_blank'><i class='fa fa-map-pin' ></i> explore location</a><br><br><a class='insta-f' href='https://www.instagram.com/"+instaMedia.user.username+"' target='_blank'><img src="+instaMedia.user.profile_picture+" style='width:20px;height:20px;border-radius:50%;top:5px;position:relative' /> Follow me on instagram</a></div></div>");
+		// 	var zoomedIcon = L.icon({
+		//     iconUrl: instaMedia.images.low_resolution.url,
+		//
+		//     iconSize:     [instaMedia.images.low_resolution.width/2, instaMedia.images.low_resolution.height/2], // size of the icon
+		//     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+		//     popupAnchor:  [-20, -76] // point from which the popup should open relative to the iconAnchor
+		// });
 
 
-https://www.instagram.com/explore/locations/
+		var marker = L.marker([instaMedia.location.latitude, instaMedia.location.longitude],{icon: icon}).addTo(markerGroup).bindPopup("<div style='position: relative;top:50px;'><img class='instapic' src='"+instaMedia.images.standard_resolution.url+"' style=''/> <div class='button-group' ><a class='insta-btn' href='"+instaMedia.link+"' target='_blank'><i class='fa fa-instagram' ></i> View on instagram</a> <br><a class='insta-loc' href='https://www.instagram.com/explore/locations/"+instaMedia.location.id+"' target='_blank'><i class='fa fa-map-pin' ></i> Explore location</a><br><br><a class='insta-f' href='https://www.instagram.com/"+instaMedia.user.username+"' target='_blank'><img src="+instaMedia.user.profile_picture+" style='width:20px;height:20px;border-radius:50%;top:5px;position:relative' /> Follow me on instagram</a></div></div>");
+		oms.addMarker(marker);
 
 
-		marker.on('mouseover',function(ev) {
-			marker.openPopup();
-		})
-		marker.on('mouseout',function(ev) {
-			// marker.setIcon(icon)
-		})
+
+		//
+		// marker.on('mouseover',function(ev) {
+		// 	marker.openPopup();
+		// })
+		// marker.on('mouseout',function(ev) {
+		// 	// marker.setIcon(icon)
+		// })
 	}
 
 	};
