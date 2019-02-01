@@ -36,21 +36,25 @@ document.addEventListener("DOMContentLoaded", function(e) {
 				onAdd: function(map) {
 					var container = L.DomUtil.create('div');
 					var link = L.DomUtil.create('a');
-					var username = L.DomUtil.create('p');
 					var img = L.DomUtil.create('img');
 					var icon = L.DomUtil.create('i');
-					username.innerText = '@'+ data[0].user.username;
+					var instamapW = L.DomUtil.create('a');
+					instamapW.innerHTML = '<p style="margin-bottom:0px;"><em>Created with</em></p>';
+					instamapW.setAttribute('href','https://www.instamap.com/')
+					instamapW.setAttribute('target','_blank')
 					link.innerHTML = '<i class="fa fa-instagram"></i> Follow @'+ data[0].user.username;
-					link.setAttribute('href','https://www.instagram.com/'+data[0].user.username)
 					link.setAttribute('target','_blank')
 					link.setAttribute('class','followMe')
-					img.src = data[0].user.profile_picture;
-					img.style.width = '30px';
-					img.style.borderRadius = '50%';
+					img.src = 'img/instamap.svg';
+					img.style.width = '70px';
+					// img.style.borderRadius = '50%';
+					container.style.textAlign = 'center';
 					container.appendChild(link);
+					container.appendChild(instamapW);
+					container.appendChild(img);
 					// link.appendChild(icon);
 					// link.appendChild(username);
-					// username.appendChild(img);
+					// instamapW.appendChild(img);
 
 					return container;
 				},
